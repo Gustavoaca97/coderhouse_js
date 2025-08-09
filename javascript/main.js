@@ -1,4 +1,7 @@
 const products = [
+
+// Main Categories, subcategories and products:
+
   // Strength & Resistance Training - Free Weights
   { id: 1, name: "Hex Dumbbell 5kg", price: 25, category: "Dumbbells", stock: 12 },
   { id: 2, name: "Adjustable Dumbbell Set 20kg", price: 120, category: "Dumbbells", stock: 8 },
@@ -106,8 +109,7 @@ const products = [
 ];
 
 /*
-  map subcategory to main category names taken from the section comments above
-  this avoids changing the product objects
+  Map subcategory to main category names
 */
 const mainCategoryMap = {
   // Strength & Resistance Training - Free Weights
@@ -188,7 +190,7 @@ const mainCategoryMap = {
   "Lifestyle": "Bags & Lifestyle"
 };
 
-// helpers
+// Helpers
 function getMainCategories() {
   return [...new Set(products.map(p => mainCategoryMap[p.category]))];
 }
@@ -208,7 +210,7 @@ function showProductsBySubcategory(subcat) {
   return msg;
 }
 
-// keeps your original grouped list if you ever want to print everything
+// keeping the original grouped list
 function showProducts() {
   let message = "Available Products:\n";
   const mains = getMainCategories();
@@ -226,7 +228,7 @@ function showProducts() {
   return message;
 }
 
-// select with three steps  main, sub, product
+// Selection flow
 function selectProducts(cart) {
   let keepShopping = true;
 
