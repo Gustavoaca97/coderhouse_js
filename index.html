@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Store</title>
+  <title>Fitness Wolrd</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Store</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">Fitness Wolrd</h1>
+      <nav>
+        <a href="html/cart.html" class="cart-link">🛒 Cart <span id="cart-count">(0)</span></a>
+      </nav>
+    </div>
+  </header>
 
-  <p>
-    My project is an e-commerce. For these first steps, I built this simulator that allows the user to select products from the store, products are categorized in different groups. 
-    The idea was also to have a bit of control over the stock available and saving products into the shopping cart. Selected products are stored using <code>localStorage</code> in the browser.
-  </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h2>Build Your Dream Gym</h2>
+      <p>High-quality equipment for strength, cardio, and recovery.</p>
+    </div>
+  </section>
 
-  <p>
-    The user can choose different products and buy in bulk, always depending on the available stock.
-    If you reload the website, you can either keep the previous cart or start from scratch.
-  </p>
+  <!-- SELECTORS -->
+  <section class="selectors container">
+    <select id="main-category">
+      <option value="">-- Select Main Category --</option>
+    </select>
 
-  <p>
-    The entire experience is done through the <strong>console</strong>. 
-    To start, open the console ( F12 or right click → "Inspect" → "Console") and reload the website.
-  </p>
+    <select id="subcategory" disabled>
+      <option value="">-- Select Subcategory --</option>
+    </select>
+  </section>
 
-  <script src="./javascript/main.js"></script>
+  <!-- PRODUCT GRID -->
+  <section class="container">
+    <h2 class="section-title">Products</h2>
+    <div id="product-grid" class="products-grid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Fitness Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="javascript/main.js"></script>
+
+  <!-- Popup notification -->
+<div id="cart-popup" class="cart-popup">Producto agregado al carrito 🛒</div>
 </body>
 </html>
